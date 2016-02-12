@@ -19,6 +19,9 @@ FishingRodCheck = False
 global ShovelCheck
 ShovelCheck = False
 
+global SafeCheck
+SafeCheck = False
+
 
 """globals"""
 
@@ -29,6 +32,7 @@ def LivingRoom():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is in the living room."
+    print "Type 'bag' or 'b' to check what is in the bag."
     
     def ActionChoiceL():
         ActionChoice = raw_input()
@@ -46,6 +50,8 @@ def LivingRoom():
             ObjectChoiceL()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             LivingRoom()
@@ -58,6 +64,7 @@ def DiningRoom():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is in the dining room."
+    print "Type 'bag' or 'b' to check what is in the bag."
 
     def ActionChoiceD():
         ActionChoice = raw_input()
@@ -78,6 +85,8 @@ def DiningRoom():
             ObjectChoiceD()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             DiningRoom()
@@ -90,6 +99,7 @@ def Bathroom():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is in the bathroom."
+    print "Type 'bag' or 'b' to check what is in the bag."
 
     def ActionChoiceBath():
         ActionChoice = raw_input()
@@ -104,6 +114,8 @@ def Bathroom():
             ObjectChoiceBath()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             Bathroom()
@@ -116,6 +128,7 @@ def Kitchen():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is in the kitchen."
+    print "Type 'bag' or 'b' to check what is in the bag."
 
     def ActionChoiceK():
         ActionChoice = raw_input()
@@ -130,6 +143,8 @@ def Kitchen():
             ObjectChoiceK()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             Kitchen()
@@ -142,6 +157,7 @@ def Balcony():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is on the balcony."
+    print "Type 'bag' or 'b' to check what is in the bag."
 
     def ActionChoiceBal():
         ActionChoice = raw_input()
@@ -156,6 +172,8 @@ def Balcony():
             ObjectChoiceBal()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             Balcony()
@@ -168,6 +186,7 @@ def Bedroom():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is in the bedroom."
+    print "Type 'bag' or 'b' to check what is in the bag."
 
     def ActionChoiceBed():
         ActionChoice = raw_input()
@@ -184,6 +203,8 @@ def Bedroom():
             ObjectChoiceBed()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             Bedroom()
@@ -196,6 +217,7 @@ def StudyRoom():
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
     print "Type 'examine' or 'e' to check what is in the study room."
+    print "Type 'bag' or 'b' to check what is in the bag."
 
     def ActionChoiceS():
         ActionChoice = raw_input()
@@ -213,6 +235,8 @@ def StudyRoom():
             ObjectChoiceS()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
+        elif ActionChoice == "b" or ActionChoice == "bag":
+            Bag()
         else:
             print "Invalid Comment. Please make a proper choice."
             StudyRoom()
@@ -224,6 +248,7 @@ def Attic():
 
 """Object Choice"""
 
+#Object choice in the Study Room
 def ObjectChoiceS():
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "drawer1"
@@ -264,8 +289,28 @@ def ObjectChoiceS():
         if RobotCheck is True and CactusCheck is True and RegretJuiceCheck is True and LitCandleCheck is True:
             print "You have successfully found everything. The safe is now opened."
             SafeCheck = True
+        if SafeCheck is True:
+            print "Congratulations. You have found a book in the safe. The book is called Catholic Belief and is put into your bag."
+
+#Object Choice in the Living Room
+def ObjectChoiceL():
 
 """Object Choice"""
+
+#BagCheck
+def Bag():
+    Bagchoose()
+    if ShovelCheck is True:
+        print "shovel"
+    if BookCheck is True:
+        print "Catholic Belief"
+    if
+
+#Use of object: Bag choose
+def Bagchoose():
+    Bagchoice = raw_input("Type in an object to examine it.")
+    if Bagchoice.lower() == "shovel":
+        print ""
 
 #RoomChoice
 def RoomChoice():
@@ -292,8 +337,7 @@ def RoomChoice():
         print "Goodbye"
         BadEnd()
 
-#Object Choice in the Living Room
-def ObjectChoiceL():
+
 
 
 #NameChoice
