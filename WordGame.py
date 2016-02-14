@@ -129,6 +129,18 @@ BathTubCheck = True
 global MatchBoxCheck
 MatchBoxCheck = False
 
+global DroplightCheck
+DroplightCheck = True
+
+global PaperCheck
+PaperCheck = False
+
+global MetalCheck
+MetalCheck = False
+
+global KeyboardCheck
+KeyboardCheck = False
+
 """globals"""
 
 #In the living room
@@ -821,6 +833,17 @@ def Bag():
     global LitCandleCheck
     global DoorKeyCheck
     global MagnetCheck
+    global KnifeCheck
+    global HammarCheck
+    global ThuleciteCheck
+    global WireCheck
+    global GearCheck
+    global RadioCheck
+    global CandleCheck
+    global MatchBoxCheck
+    global PaperCheck
+    global MetalCheck
+    global KeyboardCheck
     
     
     print "tape1"
@@ -831,14 +854,47 @@ def Bag():
     if MoneyCheck is True:
         print "$100 Bill"
     if GlassCheck is True:
-        print "A glass"
+        print "a glass"
     if GlassFillCheck is True:
-        print "A glass of water"
+        print "a glass of water"
     print "Regret Pill * " + str(Regret_pills)
     if SeedCheck is True:
         print "cactus seed"
     if CactusCheck is True:
         print "cactus"
+    if RobotCheck is True:
+        print "robot"
+    if RegretJuiceCheck is True:
+        print "regret juice"
+    if LitCandleCheck is True:
+        print "a lit candle"
+    if DoorKeyCheck is True:
+        print "key"
+    if MagnetCheck is True:
+        print "magnet"
+    if KnifeCheck is True:
+        print "knife"
+    if HammarCheck is True:
+        print "hammar"
+    if ThuleciteCheck is True:
+        print "thulecite"
+    if WireCheck is True:
+        print "wire"
+    if GearCheck is True:
+        print "gear"
+    if RadioCheck is True:
+        print "radio"
+    if CandleCheck is True:
+        print "candle"
+    if MatchBoxCheck is True:
+        print "a box of match"
+    if PaperCheck is True:
+        print "paper"
+    if MetalCheck is True:
+        print "metal"
+    if KeyboardCheck is True:
+        print "keyboard"
+
     Bagchoose()
     LivingRoom()
 
@@ -849,6 +905,7 @@ def Bagchoose():
     global SeedCheck
     global GlassFillCheck
     global GlassCheck
+    global PaperCheck
     
     Bagchoice = raw_input("Type in an object to examine it: ")
     if Bagchoice.lower() == "tape1":
@@ -858,7 +915,6 @@ def Bagchoose():
             print "You have always been a selfish guy who pretends to be generous."
             print "However, you have a best friend whose name is Heny and you have claimed that you would do anything for him."
             print "He is now trapped in this house. You may choose to save him or not."
-            print "Hahahahahahahaha."
             print " "
             LivingRoom()
         if RadioCheck is False:
@@ -869,6 +925,14 @@ def Bagchoose():
         LivingRoom()
     if Bagchoice.lower() == "catholic belief":
         print "I would say that it is obvious where this book should be placed in."
+        if LitCandleCheck is True:
+            PaperCreate = raw_input("Do you want to lit your book? Type y or n: ")
+            if PaperCreate == "y":
+                print "You have gotten a piece of paper."
+                PaperCheck = True
+                LitCandleCheck = False
+                CandleCheck = True
+                BookCheck = False
         LivingRoom()
     if Bagchoice.lower() == "$100 bill":
         print "Of course, money should be used to buy things."
@@ -891,19 +955,58 @@ def Bagchoose():
                 print "Okay, maybe later."
                 LivingRoom()
     if Bagchoice.lower() == "regret pill":
-        print "These pills can help you regret"
-        if CactusCheck is True:
-            CactusBreak = raw_input("Do you wish to break up your cactus? Type y or n")
-            if CactusBreak == "y":
-                print "This is not a very good choice"
-                CactusCheck = False
-                SeedCheck = True
-                Regret_pills -= 1
-                LivingRoom()
-            if CactusBreak == "n":
-                print "Good for you"
-                LivingRoom()
-        LivingRoom()
+        print "These pills can help you regret."
+        Break = raw_input("Which object do you want to change back?")
+        if Break.lower() == "cancel":
+            LivingRoom()
+        if Break.lower() == "cactus":
+            print "cactus is changed."
+            CactusCheck = False
+            SeedCheck = True
+            Regret_pills -= 1
+            LivingRoom()
+        if Break.lower() == "robot":
+            print "robot is changed"
+            RobotCheck = False
+            ThuleciteCheck = True
+            WireCheck = True
+            GearCheck = True
+            MagnetCheck = True
+            Regret_pills -= 1
+            LivingRoom()
+        if Break.lower() == "a lit candle":
+            print "a lit candle is changed"
+            LitCandleCheck = False
+            CandleCheck = True
+            Regret_pills -= 1
+            LivingRoom()
+        if Break.lower() == "regret juice":
+            print "regret juice is changed"
+            RegretJuiceCheck = False
+            GlassFillCheck = True
+            LivingRoom()
+        if Break.lower() == "paper":
+            print "paper is changed"
+            PaperCheck = False
+            BookCheck = True
+            Regret_pills -= 1
+            LivingRoom()
+        if Break.lower() == "metal":
+            print "metal is changed"
+            MetalCheck = False
+            DoorKeyCheck = True
+            Regret_pills -= 1
+            LivingRoom()
+        if Break.lower() == "keyboard":
+            print "keyboard is changed"
+            KeyboardCheck = False
+            WireCheck = True
+            GearCheck = True
+            Regret_pills -= 1
+            LivingRoom()
+        else:
+            print "This cannot be changed. Sorry."
+            LivingRoom()
     if Bagchoice.lower() == "cactus seed":
         print "This seed is bought from an advertisement and has great use."
         if GlassFillCheck is True:
@@ -921,7 +1024,54 @@ def Bagchoose():
     if Bagchoice.lower() == "cactus":
         print "I would say this is just a cactus."
         LivingRoom()
-
+    if Bagchoice.lower() == "robot":
+        print "A robot can be used to do what...? I don't know."
+        LivingRoom()
+    if Bagchoice.lower() == "regret juice":
+        print "At least it does not have as much effect as when it is still pills."
+        LivingRoom()
+    if Bagchoice.lower() == "a lit candle":
+        print "I guess this is just a candle on fire."
+        LivingRoom()
+    if Bagchoice.lower() == "key":
+        print "This key can be used to open a lock."
+        LivingRoom()
+    if Bagchoice.lower() == "magnet":
+        print "This magnet can be used to attract metals."
+        LivingRoom()
+    if Bagchoice.lower() == "knife":
+        print "I think its usage is more like that of a pair of scissors."
+        LivingRoom()
+    if Bagchoice.lower() == "hammar":
+        print "A hammar is usually used to smash things"
+        LivingRoom()
+    if Bagchoice.lower() == "thulcecite":
+        print "I would recommend you use a dictionary."
+        LivingRoom()
+    if Bagchoice.lower() == "wire":
+        print "A wire provides electricity."
+        LivingRoom()
+    if Bagchoice.lower() == "gear":
+        print "Can be created by smashing any machine."
+        LivingRoom()
+    if Bagchoice.lower() == "radio":
+        print "Radios are used to play tapes."
+        LivingRoom()
+    if Bagchoice.lower() == "candle":
+        print "The candle is gotten from the dining table."
+        LivingRoom()
+    if Bagchoice.lower() == "a box of match":
+        print "Matches are to light things."
+        LivingRoom()
+    if Bagchoice.lower() == "paper":
+        print "A part of the book."
+        LivingRoom()
+    if Bagchoice.lower() == "metal":
+        print "The door key is melt down."
+        LivingRoom()
+    if Bagchoice.lower() == "keyboard":
+        print "If connected to computer, can be used to type things out."
+        LivingRoom()
     else:
         print "Please examine something that is in your bag by typing in the correct name."
         Bagchoose()
@@ -989,6 +1139,7 @@ def Introduction():
     print "You and your friend Heny were trying to find out a dark secret in the house when someone attacked you from behind and you fainted."
     print "You need to leave the house ASAP before something happen to you."
     print "Now, try to escape the house safely."
+    print "Remember, you can type 'cancel' to return to the Living Room at specific times."
     LivingRoom()
 
 #A bad ending of the game
