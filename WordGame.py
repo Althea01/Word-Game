@@ -394,7 +394,7 @@ def Attic():
             print "Bedroom"
             RoomChoice()
         elif ActionChoice == "e" or ActionChoice == "examine":
-            print "Tape 2"
+            print "Tape2"
             ObjectChoiceA()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
@@ -428,7 +428,8 @@ def ObjectChoiceS():
     global CactusBreak
     global LitCandleCheck
     global RegretJuiceCheck
-    
+    global SafeCheck
+    global MoneyCheck
     
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "drawer1":
@@ -564,6 +565,13 @@ def ObjectChoiceS():
 
 #Object Choice in the Living Room
 def ObjectChoiceL():
+    global TelevisionCheck
+    global TableCheck
+    global GlassCheck
+    global SofaCheck
+    global KnifeCheck
+    global WireCheck
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "television":
         if TelevisionCheck is False:
@@ -612,6 +620,12 @@ def ObjectChoiceL():
 
 #Object Choice in the Kitchen
 def ObjectChoiceK():
+    global KnifeCaseCheck
+    global KnifeCheck
+    global HammarCheck
+    global RefrigeratorCheck
+    global LitCandleCheck
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower == "knife case":
         if KnifeCaseCheck is True:
@@ -640,6 +654,11 @@ def ObjectChoiceK():
 
 #Object Choice in the Dining Room
 def ObjectChoiceD():
+    global DroplightCheck
+    global RadioCheck
+    global DiningTableCheck
+    global CandleCheck
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "droplight":
         if DroplightCheck is True:
@@ -662,6 +681,12 @@ def ObjectChoiceD():
 
 #Object Choice in the Bathroom
 def ObjectChoiceBath():
+    global GlassCheck
+    global GlassFillCheck
+    global AtticCheck
+    global BathTubCheck
+    global MatchBoxCheck
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "basin":
         if GlassCheck is True:
@@ -694,6 +719,9 @@ def ObjectChoiceBath():
 
 #Object Choice in the Bedroom
 def ObjectChoiceBed():
+    global TelephoneCheck
+    global MoneyCheck
+    
     ObjectChoose == raw_input()
     if ObjectChoose.lower() == "telephone":
         if TelephoneCheck is False:
@@ -729,6 +757,12 @@ def ObjectChoiceBed():
 
 #Object Choice in the Balcony
 def ObjectChoiceBal():
+    global TelescopeCheck
+    global LakeCheck
+    global FishingRodCheck
+    global MagnetCheck
+    global DoorKeyCheck
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "telescope":
         if TelescopeCheck is False:
@@ -753,6 +787,8 @@ def ObjectChoiceBal():
 
 #Object Choice in the Attic
 def ObjectChoiceA():
+    global RadioCheck
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "tape2":
         if RadioCheck is True:
@@ -773,7 +809,21 @@ def ObjectChoiceA():
 
 #BagCheck
 def Bag():
-    print "tape 1"
+    global ShovelCheck
+    global BookCheck
+    global MoneyCheck
+    global GlassCheck
+    global GlassFillCheck
+    global SeedCheck
+    global CactusCheck
+    global RobotCheck
+    global RegretJuiceCheck
+    global LitCandleCheck
+    global DoorKeyCheck
+    global MagnetCheck
+    
+    
+    print "tape1"
     if ShovelCheck is True:
         print "shovel"
     if BookCheck is True:
@@ -795,6 +845,11 @@ def Bag():
 #Use of object: Bag choose
 def Bagchoose():
     global CactusCheck
+    global RadioCheck
+    global SeedCheck
+    global GlassFillCheck
+    global GlassCheck
+    
     Bagchoice = raw_input("Type in an object to examine it: ")
     if Bagchoice.lower() == "tape1":
         if RadioCheck is True:
@@ -871,9 +926,15 @@ def Bagchoose():
         print "Please examine something that is in your bag by typing in the correct name."
         Bagchoose()
 
+#Advice from Heny
+def Heny()
+
+
 
 #RoomChoice
 def RoomChoice():
+    global LakeCheck
+    
     RoomChoose = raw_input()
     if RoomChoose.lower() == "dining room":
         DiningRoom()
@@ -906,9 +967,6 @@ def RoomChoice():
         print "Goodbye"
         BadEnd()
 
-
-
-
 #NameChoice
 def InputName():
     name1 = raw_input("Please enter your name:")
@@ -939,6 +997,8 @@ def BadEnd():
 
 #Ending one by leaving from Book Shelf
 def Ending1():
+    global TeammateCheck
+    
     if TeammateCheck is True:
         print "Now, it is time for you to make a final choice."
         print "Only one of you can leave from this door."
