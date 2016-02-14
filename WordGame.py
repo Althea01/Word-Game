@@ -900,12 +900,49 @@ def Bag():
 
 #Use of object: Bag choose
 def Bagchoose():
-    global CactusCheck
-    global RadioCheck
-    global SeedCheck
-    global GlassFillCheck
+
+    global FishingRodCheck
+    global ShovelCheck
+    global SafeCheck
+    global BookShelfCheck
+    global MoneyCheck
+    global Drawer1Check
+    global Drawer2Check
+    global TelevisionCheck
+    global PillCheck
+    global Regret_pills
+    global TableCheck
     global GlassCheck
+    global GlassFillCheck
+    global SeedCheck
+    global RobotCheck
+    global CactusCheck
+    global RegretJuiceCheck
+    global LitCandleCheck
+    global BookCheck
+    global Drawer3Check
+    global TelescopeCheck
+    global DoorKeyCheck
+    global MagnetCheck
+    global KnifeCheck
+    global HammarCheck
+    global TeddyBearCheck
+    global ThuleciteCheck
+    global SofaCheck
+    global WireCheck
+    global ComputerCheck
+    global GearCheck
+    global RadioCheck
+    global KnifeCaseCheck
+    global LakeCheck
+    global DiningTableCheck
+    global CandleCheck
+    global BathTubCheck
+    global MatchBoxCheck
+    global DroplightCheck
     global PaperCheck
+    global MetalCheck
+    global KeyboardCheck
     
     Bagchoice = raw_input("Type in an object to examine it: ")
     if Bagchoice.lower() == "tape1":
@@ -925,7 +962,7 @@ def Bagchoose():
         LivingRoom()
     if Bagchoice.lower() == "catholic belief":
         print "I would say that it is obvious where this book should be placed in."
-        if LitCandleCheck is True:
+        if LitCandleCheck is True and BookCheck is True:
             PaperCreate = raw_input("Do you want to lit your book? Type y or n: ")
             if PaperCreate == "y":
                 print "You have gotten a piece of paper."
@@ -942,16 +979,15 @@ def Bagchoose():
         LivingRoom()
     if Bagchoice.lower() == "a glass of water":
         print "I think you can do more than just drink it."
-        if SeedCheck is True:
-            SeedChoose = raw_input("You have cactus seed in your bag, do you want to water it? Type y or n")
-            if SeedChoose == "y":
-                print "The seed turns into a cactus."
-                CactusCheck = True
-                SeedCheck = False
+        if Regret_pills >= 1:
+            RegretJuiceChoose = raw_input("Do you want to create regret juice? Type y or n: ")
+            if RegretJuiceChoose == "y":
+                print "One pill is used."
+                RegretJuiceCheck = True
+                Regret_pills -= 1
                 GlassFillCheck = False
-                GlassCheck = True
                 LivingRoom()
-            if SeedChoose == "n":
+            if RegretJuiceChoose == "n":
                 print "Okay, maybe later."
                 LivingRoom()
     if Bagchoice.lower() == "regret pill":
@@ -1009,7 +1045,7 @@ def Bagchoose():
             LivingRoom()
     if Bagchoice.lower() == "cactus seed":
         print "This seed is bought from an advertisement and has great use."
-        if GlassFillCheck is True:
+        if GlassFillCheck is True and if SeedCheck is True:
             SeedChoose = raw_input("You have a glass of water in your bag, do you want to water the seed? Type y or n")
             if SeedChoose == "y":
                 print "The seed turns into a cactus."
@@ -1035,9 +1071,29 @@ def Bagchoose():
         LivingRoom()
     if Bagchoice.lower() == "key":
         print "This key can be used to open a lock."
+        if LitCandleCheck is True and DoorKeyCheck is True:
+            MetalCreate = raw_input("Do you want to melt down your key? Type y or n: ")
+            if MetalCreate == "y":
+                print "You have gotten a piece of metal."
+                MetalCheck = True
+                LitCandleCheck = False
+                CandleCheck = True
+                DoorKeyCheck = False
         LivingRoom()
     if Bagchoice.lower() == "magnet":
         print "This magnet can be used to attract metals."
+        if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
+            RobotChoose = raw_input("You have thulecite, gear and wire in your bag, do you want to combine them? Type y or n: ")
+            if RobotChoose == "y":
+                print "A robot is created."
+                RobotCheck = True
+                ThuleciteCheck = False
+                GearCheck = False
+                WireCheck = False
+                LivingRoom()
+            if RobotChoose == "n":
+                print "Okay, maybe later."
+                LivingRoom()
         LivingRoom()
     if Bagchoice.lower() == "knife":
         print "I think its usage is more like that of a pair of scissors."
@@ -1045,21 +1101,76 @@ def Bagchoose():
     if Bagchoice.lower() == "hammar":
         print "A hammar is usually used to smash things"
         LivingRoom()
-    if Bagchoice.lower() == "thulcecite":
+    if Bagchoice.lower() == "thulecite":
         print "I would recommend you use a dictionary."
-        LivingRoom()
+        if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
+            RobotChoose = raw_input("You have wire, gear and magnet in your bag, do you want to combine them? Type y or n: ")
+            if RobotChoose == "y":
+                print "A robot is created."
+                RobotCheck = True
+                ThuleciteCheck = False
+                GearCheck = False
+                WireCheck = False
+                LivingRoom()
+            if RobotChoose == "n":
+                print "Okay, maybe later."
+                LivingRoom()
     if Bagchoice.lower() == "wire":
         print "A wire provides electricity."
-        LivingRoom()
+        if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
+            RobotChoose = raw_input("You have thulecite, gear and magnet in your bag, do you want to combine them? Type y or n: ")
+            if RobotChoose == "y":
+                print "A robot is created."
+                RobotCheck = True
+                ThuleciteCheck = False
+                GearCheck = False
+                WireCheck = False
+                LivingRoom()
+            if RobotChoose == "n":
+                print "Okay, maybe later."
+                LivingRoom()
+        if ThuleciteCheck is False and GearCheck is True and MagnetCheck is False and WireCheck is True or ThuleciteCheck is True and GearCheck is True and MagnetCheck is False and WireCheck is True or ThuleciteCheck is False and GearCheck is True and MagnetCheck is True and WireCheck is True:
+            KeyboardChoose = raw_input("Do you want to create a keyboard with gear and wire? Type y or n: ")
+            if KeyboardChoose == "y":
+                print "A keyboard is created."
+                KeyboardCheck = True
+                GearCheck = False
+                WireCheck = False
+                LivingRoom()
+            if KeyboardChoose == "n":
+                print "Okay, maybe later."
+                LivingRoom()
+
     if Bagchoice.lower() == "gear":
         print "Can be created by smashing any machine."
-        LivingRoom()
+        if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
+            RobotChoose = raw_input("You have thulecite, wire and magnet in your bag, do you want to combine them? Type y or n: ")
+            if RobotChoose == "y":
+                print "A robot is created."
+                RobotCheck = True
+                ThuleciteCheck = False
+                GearCheck = False
+                WireCheck = False
+                LivingRoom()
+            if RobotChoose == "n":
+                print "Okay, maybe later."
+                LivingRoom()
     if Bagchoice.lower() == "radio":
         print "Radios are used to play tapes."
         LivingRoom()
     if Bagchoice.lower() == "candle":
         print "The candle is gotten from the dining table."
-        LivingRoom()
+        if CandleCheck is True and MatchBoxCheck is True:
+            LitCandleChoose = raw_input("You have match box in your bag, do you want to light the candle? Type y or n: ")
+            if LitCandleChoose == "y":
+                print "A lit candle is created."
+                LitCandleCheck = True
+                MatchBoxCheck = False
+                CandleCheck = False
+                LivingRoom()
+            if LitCandleChoose == "n":
+                print "Okay, maybe later."
+                LivingRoom()
     if Bagchoice.lower() == "a box of match":
         print "Matches are to light things."
         LivingRoom()
@@ -1078,7 +1189,7 @@ def Bagchoose():
 
 #Advice from Heny
 def Heny()
-
+    print "Hahaha"
 
 
 #RoomChoice
