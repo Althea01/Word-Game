@@ -96,6 +96,38 @@ TeddyBearCheck = True
 global ThuleciteCheck
 ThuleciteCheck = False
 
+global SofaCheck
+SofaCheck = True
+
+global WireCheck
+WireCheck = False
+
+global ComputerCheck
+ComputerCheck = True
+
+global GearCheck
+GearCheck = False
+
+global RadioCheck
+RadioCheck = False
+
+global KnifeCaseCheck
+KnifeCaseCheck = True
+
+global LakeCheck
+LakeCheck = False
+
+global DiningTableCheck
+DiningTableCheck = True
+
+global CandleCheck
+CandleCheck = False
+
+global BathTubCheck
+BathTubCheck = True
+
+global MatchBoxCheck
+MatchBoxCheck = False
 
 """globals"""
 
@@ -222,7 +254,6 @@ def Kitchen():
         elif ActionChoice == "e" or ActionChoice == "examine":
             print "Refrigerator"
             print "Knife case"
-            print "Floor"
             ObjectChoiceK()
         elif ActionChoice == "t" or ActionChoice == "talk":
             Heny()
@@ -237,6 +268,7 @@ def Kitchen():
 def Balcony():
     global TeammateCheck
     global FishingRodCheck
+    global LakeCheck
     
     print "You are now on the balcony."
     if TeammateCheck is True:
@@ -250,6 +282,8 @@ def Balcony():
         if ActionChoice == "m" or ActionChoice == "move":
             print "Which room do you want to go to?"
             print "Living room"
+            if LakeCheck is True:
+                print "Lake"
             RoomChoice()
         elif ActionChoice == "e" or ActionChoice == "examine":
             print "Telescope"
@@ -353,8 +387,8 @@ def Attic():
     print "Type 'examine' or 'e' to check what is in the study room."
     print "Type 'bag' or 'b' to check what is in the bag."
 
-def ActionChoiceA():
-    ActionChoice = raw_input()
+    def ActionChoiceA():
+        ActionChoice = raw_input()
         if ActionChoice == "m" or ActionChoice == "move":
             print "Which room do you want to go to?"
             print "Bedroom"
@@ -376,6 +410,26 @@ def ActionChoiceA():
 
 #Object Choice in the Study Room
 def ObjectChoiceS():
+    global Drawer1Check
+    global Drawer2Check
+    global Drawer3Check
+    global ShovelCheck
+    global PillCheck
+    global TeddyBearCheck
+    global KnifeCheck
+    global ThuleciteCheck
+    global HammarCheck
+    global ComputerCheck
+    global GearCheck
+    global BookCheck
+    global DoorKeyCheck
+    global BookShelfCheck
+    global RobotCheck
+    global CactusBreak
+    global LitCandleCheck
+    global RegretJuiceCheck
+    
+    
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "drawer1":
         if Drawer1Check is True:
@@ -422,6 +476,25 @@ def ObjectChoiceS():
                 print "The teddy bear is cut open."
                 print "You have gotten thulecite"
                 ThuleciteCheck = True
+                TeddyBearCheck = False
+                StudyRoom()
+        if TeddyBearCheck is False:
+            print "The teddy bear is broken"
+            StudyRoom()
+
+    if ObjectChoose.lower() == "computer":
+        if ComputerCheck is True:
+            print "This is a computer."
+            if HammarCheck is True:
+                print "Oh, you have a hammar. The computer is smashed."
+                print "You have gotten gears."
+                GearCheck = True
+                HammarCheck = False
+                ComputerCheck = False
+                StudyRoom()
+        if ComputerCheck is False:
+            print "This is a broken computer with a hammar stucked in it."
+            StudyRoom()
 
     if ObjectChoose.lower() == "book shelf":
         print "Aha! The book shelf can be moved! Do you wish to move it? Type y or n"
@@ -514,20 +587,78 @@ def ObjectChoiceL():
             LivingRoom()
         if TableCheck is False:
             print "There's nothing on the table"
+            LivingRoom()
+    elif ObjectChoose.lower() == "sofa":
+        if SofaCheck is True:
+            print "There is a wire behind the sofa."
+            if KnifeCheck is True:
+                print "Oh, you have a knife."
+                KnifeCut = raw_input("Do you want to cut the wire? Type y or n: ")
+                if KnifeCut == "y":
+                    print "The house goes into complete darkness."
+                    WireCheck = True
+                    SofaCheck = False
+                    LivingRoom()
+                if KnifeCut == "n":
+                    print "Maybe come back later"
+                    LivingRoom()
+        if SofaCheck is False:
+            print "There is nothing here."
+            LivingRoom()
+
+
+
 
 
 #Object Choice in the Kitchen
 def ObjectChoiceK():
     ObjectChoose = raw_input()
     if ObjectChoose.lower == "knife case":
-        print "You have received a knife."
-        print "You have received a hammar."
-        KnifeCheck = True
-        HammarCheck = True
+        if KnifeCaseCheck is True:
+            print "You have received a knife."
+            print "You have received a hammar."
+            KnifeCheck = True
+            HammarCheck = True
+            KnifeCaseCheck = False
+            Kitchen()
+        if KnifeCaseCheck is False:
+            print "You have already taken away everything from this knife case."
+            Kitchen()
+    if ObjectChoose.lower == "refrigerator":
+        if RefrigeratorCheck is True:
+            print "You have found a magnet."
+            if LitCandleCheck is True:
+                print "Sorry, the fire on your candle has died out."
+                LitCandleCheck = False
+                Kitchen()
+        if RefrigeratorCheck is False:
+            print "There's nothing else in the refrigerator."
+            if LitCandleCheck is True:
+                print "Sorry, the fire on your candle has died out."
+                LitCandleCheck = False
+                Kitchen()
 
 #Object Choice in the Dining Room
 def ObjectChoiceD():
-    DiningRoom()
+    ObjectChoose = raw_input()
+    if ObjectChoose.lower() == "droplight":
+        if DroplightCheck is True:
+            print "Wow, there is a radio in the droplight."
+            RadioCheck = True
+            DiningRoom()
+        if DroplightCheck is False:
+            print "This is a droplight."
+            DiningRoom()
+    if ObjectChoose.lower() == "dining table":
+        if DiningTableCheck is True:
+            print "There is a candle on the table."
+            CandleCheck = True
+            DiningTableCheck = False
+            DiningRoom()
+        if DiningTableCheck is False:
+            print "There's nothing on the table."
+            DiningRoom()
+
 
 #Object Choice in the Bathroom
 def ObjectChoiceBath():
@@ -551,6 +682,15 @@ def ObjectChoiceBath():
             print "Congratulations!"
             AtticCheck = True
             Attic()
+    if ObjectChoose.lower() == "bath tub":
+        if BathTubCheck is True:
+            print "You have found a match box in the bath tub."
+            MatchBoxCheck = True
+            Bathroom()
+        if BathTubCheck is False:
+            print "You have found another match box in the bath tub."
+            MatchBoxCheck = True
+            Bathroom()
 
 #Object Choice in the Bedroom
 def ObjectChoiceBed():
@@ -579,6 +719,12 @@ def ObjectChoiceBed():
         elif TelephoneCheck is True:
             print "..."
             Bedroom()
+    if ObjectChoose.lower() == "bed":
+        print "You have taken a nap."
+        Bedroom()
+    if ObjectChoose.lower() == "wardrobe":
+        print "Sorry, your teammate is not in here and this wardrobe is not movable."
+        Bedroom()
 
 
 #Object Choice in the Balcony
@@ -590,6 +736,7 @@ def ObjectChoiceBal():
             print "He suddenly raises his head and stares at your direction."
             print "He puts on a weird smile and jumps into the lake with his fishing rod."
             TelescopeCheck = True
+            LakeCheck = True
         if TelescopeCheck is True:
             FishingRodCheck = True
             print "A dead body floats on the surface of the lake."
@@ -608,6 +755,17 @@ def ObjectChoiceBal():
 def ObjectChoiceA():
     ObjectChoose = raw_input()
     if ObjectChoose.lower() == "tape2":
+        if RadioCheck is True:
+            RadioUse = raw_input("Do you want to put tape2 into the radio?")
+            if RadioUse == "y":
+                print "Congratulations, you have successfully saved your teammate Heny. From now on, you can talk to him and get a whole lot of information."
+                Attic()
+            if RadioUse == "n":
+                print "I think you should listen to the tape."
+                Attic()
+        if RadioCheck is False:
+            print "You can't listen to tape2 just with this single tape, right?"
+            Attic()
 
 
 
@@ -638,6 +796,19 @@ def Bag():
 def Bagchoose():
     global CactusCheck
     Bagchoice = raw_input("Type in an object to examine it: ")
+    if Bagchoice.lower() == "tape1":
+        if RadioCheck is True:
+            print "Yes. It is I who attracted you to here."
+            print "You do not need to know who I am."
+            print "You have always been a selfish guy who pretends to be generous."
+            print "However, you have a best friend whose name is Heny and you have claimed that you would do anything for him."
+            print "He is now trapped in this house. You may choose to save him or not."
+            print "Hahahahahahahaha."
+            print " "
+            LivingRoom()
+        if RadioCheck is False:
+            print "You can't listen just with a tape, right?"
+            LivingRoom()
     if Bagchoice.lower() == "shovel":
         print "Seems like it could be used to dig something...as a shovel."
         LivingRoom()
@@ -720,6 +891,15 @@ def RoomChoice():
         Bedroom()
     elif RoomChoose.lower() == "study room":
         StudyRoom()
+    elif RoomChoose.lower() == "lake":
+        print "Are you sure that you want to leave the house by jumping into the lake?"
+        LakeChoose = raw_input("Type y or n")
+        if LakeChoose == "y":
+            print "As you try to swim away from the house, you feel grabbed by two hands."
+            print "Without knowing what has happened, you drowned into the lake."
+        if LakeChoose == "n":
+            LakeCheck = False
+            Balcony()
     else:
         print "You are trying to go to a place that nobody knows that exists in here"
         print "You have known too much"
