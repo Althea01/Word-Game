@@ -160,7 +160,7 @@ def LivingRoom():
     
     def ActionChoiceL():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -208,7 +208,7 @@ def DiningRoom():
 
     def ActionChoiceD():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -258,7 +258,7 @@ def Bathroom():
 
     def ActionChoiceBath():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -302,7 +302,7 @@ def Kitchen():
 
     def ActionChoiceK():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -347,7 +347,7 @@ def Balcony():
 
     def ActionChoiceBal():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -394,7 +394,7 @@ def Bedroom():
 
     def ActionChoiceBed():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -441,7 +441,7 @@ def StudyRoom():
 
     def ActionChoiceS():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -486,7 +486,7 @@ def Attic():
     
     TeammateCheck = True
     print " "
-    print "You are now in the study room."
+    print "You are now in the attic."
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -495,7 +495,7 @@ def Attic():
 
     def ActionChoiceA():
         ActionChoice = raw_input()
-        if ActionChoice.lower == "cancel":
+        if ActionChoice.lower() == "cancel":
             LivingRoom()
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
@@ -550,7 +550,7 @@ def ObjectChoiceS():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "drawer1":
         if Drawer1Check is True:
@@ -567,7 +567,7 @@ def ObjectChoiceS():
         if Drawer2Check is True:
             print " "
             PassWord = raw_input("Please type in the first four numbers of pi")
-            if PassWord.lower == "cancel":
+            if PassWord.lower() == "cancel":
                 LivingRoom()
             if PassWord == "3141":
                 print " "
@@ -637,7 +637,7 @@ def ObjectChoiceS():
         print " "
         print "Aha! The book shelf can be moved! Do you wish to move it? Type y or n"
         MoveChoice = raw_input()
-        if MoveChoice.lower == "cancel":
+        if MoveChoice.lower() == "cancel":
             LivingRoom()
         if MoveChoice == "y":
             print " "
@@ -651,7 +651,7 @@ def ObjectChoiceS():
                 print " "
                 print "Do you want to put your book onto the shelf? Type y or n"
                 BookChoice = raw_input()
-                if BookChoice.lower == "cancel":
+                if BookChoice.lower() == "cancel":
                     LivingRoom()
                 if BookChoice.lower == "y":
                     if DoorKeyCheck is True:
@@ -706,7 +706,7 @@ def ObjectChoiceS():
             print " "
             print "Wow, something's in the vase, do you want to dig it out?"
             vasedig = raw_input("Type y or n: ")
-            if vasedig.lower == "cancel":
+            if vasedig.lower() == "cancel":
                 LivingRoom()
             if vasedig == "y":
                 print " "
@@ -728,7 +728,7 @@ def ObjectChoiceL():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "television":
         if TelevisionCheck is False:
@@ -765,7 +765,7 @@ def ObjectChoiceL():
                 print " "
                 print "Oh, you have a knife."
                 KnifeCut = raw_input("Do you want to cut the wire? Type y or n: ")
-                if KnifeCut.lower == "cancel":
+                if KnifeCut.lower() == "cancel":
                     LivingRoom()
                 if KnifeCut == "y":
                     print " "
@@ -796,7 +796,7 @@ def ObjectChoiceK():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower == "knife case":
         if KnifeCaseCheck is True:
@@ -838,7 +838,7 @@ def ObjectChoiceD():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "droplight":
         if DroplightCheck is True:
@@ -873,13 +873,13 @@ def ObjectChoiceBath():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "basin":
         if GlassCheck is True:
             print " "
             GlassFill = raw_input("Do you want to fill your glass? Type y or n")
-            if GlassFill.lower == "cancel":
+            if GlassFill.lower() == "cancel":
                 LivingRoom()
             if GlassFill == "y":
                 print " "
@@ -897,7 +897,7 @@ def ObjectChoiceBath():
     if ObjectChoose.lower() == "mirror":
         print " "
         MirrorQuestion = raw_input("Hahahahaha! I am a really smart guy since I will never admit that I am stupid. Now, I am most proud of myself because for all my accounts, I use the same password that is most difficult to guess because it does not contain a single number. Now, make a try. If you succeed, I will give you a big surprise. Password: ")
-        if MirrorQuestion.lower == "cancel":
+        if MirrorQuestion.lower() == "cancel":
             LivingRoom()
         if MirrorQuestion == "password":
             print " "
@@ -923,19 +923,19 @@ def ObjectChoiceBed():
     
     print " "
     ObjectChoose == raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "telephone":
         if TelephoneCheck is False:
             print " "
             TelephoneNumber = raw_input("Which number do you want to dial?")
-            if TelephoneNumber.lower == "cancel":
+            if TelephoneNumber.lower() == "cancel":
                 LivingRoom()
             if TelephoneNumber == "19971115":
                 print " "
                 print "This is cactus seed selling hotline. Do you want to buy seed?"
                 BuyChoice = raw_input("Type 1 for yes and 2 for no")
-                if BuyChoice.lower == "cancel":
+                if BuyChoice.lower() == "cancel":
                     LivingRoom()
                 if BuyChoice == "1":
                     if MoneyCheck is True:
@@ -980,7 +980,7 @@ def ObjectChoiceBal():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "telescope":
         if TelescopeCheck is False:
@@ -997,7 +997,7 @@ def ObjectChoiceBal():
     if ObjectChoose.lower() == "fishing rod":
         print " "
         FishingRodUse = raw_input("Do you want to use the fishing rod? Type y or n: ")
-        if FishingRodUse.lower == "cancel":
+        if FishingRodUse.lower() == "cancel":
             LivingRoom()
         if FishingRodUse == "y":
             if MagnetCheck is True:
@@ -1016,13 +1016,13 @@ def ObjectChoiceA():
     
     print " "
     ObjectChoose = raw_input()
-    if ObjectChoose.lower == "cancel":
+    if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "tape2":
         if RadioCheck is True:
             print " "
             RadioUse = raw_input("Do you want to put tape2 into the radio?")
-            if RadioUse.lower == "cancel":
+            if RadioUse.lower() == "cancel":
                 LivingRoom()
             if RadioUse == "y":
                 print " "
@@ -1170,7 +1170,7 @@ def Bagchoose():
     
     print " "
     Bagchoice = raw_input("Type in an object to examine it: ")
-    if Bagchoice.lower == "cancel":
+    if Bagchoice.lower() == "cancel":
         LivingRoom()
     if Bagchoice.lower() == "tape1":
         if RadioCheck is True:
@@ -1195,7 +1195,7 @@ def Bagchoose():
         if LitCandleCheck is True and BookCheck is True:
             print " "
             PaperCreate = raw_input("Do you want to lit your book? Type y or n: ")
-            if PaperCreate.lower == "cancel":
+            if PaperCreate.lower() == "cancel":
                 LivingRoom()
             if PaperCreate == "y":
                 print " "
@@ -1219,7 +1219,7 @@ def Bagchoose():
         if Regret_pills >= 1:
             print " "
             RegretJuiceChoose = raw_input("Do you want to create regret juice? Type y or n: ")
-            if RegretJuiceChoose.lower == "cancel":
+            if RegretJuiceChoose.lower() == "cancel":
                 LivingRoom()
             if RegretJuiceChoose == "y":
                 print " "
@@ -1237,8 +1237,6 @@ def Bagchoose():
         print "These pills can help you regret."
         print " "
         Break = raw_input("Which object do you want to change back?")
-        if Break.lower == "cancel":
-            LivingRoom()
         if Break.lower() == "cancel":
             LivingRoom()
         if Break.lower() == "cactus":
@@ -1303,7 +1301,7 @@ def Bagchoose():
         if GlassFillCheck is True and SeedCheck is True:
             print " "
             SeedChoose = raw_input("You have a glass of water in your bag, do you want to water the seed? Type y or n: ")
-            if SeedChoose.lower == "cancel":
+            if SeedChoose.lower() == "cancel":
                 LivingRoom()
             if SeedChoose == "y":
                 print " "
@@ -1339,7 +1337,7 @@ def Bagchoose():
         if LitCandleCheck is True and DoorKeyCheck is True:
             print " "
             MetalCreate = raw_input("Do you want to melt down your key? Type y or n: ")
-            if MetalCreate.lower == "cancel":
+            if MetalCreate.lower() == "cancel":
                 LivingRoom()
             if MetalCreate == "y":
                 print " "
@@ -1355,7 +1353,7 @@ def Bagchoose():
         if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
             print " "
             RobotChoose = raw_input("You have thulecite, gear and wire in your bag, do you want to combine them? Type y or n: ")
-            if RobotChoose.lower == "cancel":
+            if RobotChoose.lower() == "cancel":
                 LivingRoom()
             if RobotChoose == "y":
                 print " "
@@ -1384,7 +1382,7 @@ def Bagchoose():
         if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
             print " "
             RobotChoose = raw_input("You have wire, gear and magnet in your bag, do you want to combine them? Type y or n: ")
-            if RobotChoose.lower == "cancel":
+            if RobotChoose.lower() == "cancel":
                 LivingRoom()
             if RobotChoose == "y":
                 print " "
@@ -1404,7 +1402,7 @@ def Bagchoose():
         if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
             print " "
             RobotChoose = raw_input("You have thulecite, gear and magnet in your bag, do you want to combine them? Type y or n: ")
-            if RobotChoose.lower == "cancel":
+            if RobotChoose.lower() == "cancel":
                 LivingRoom()
             if RobotChoose == "y":
                 print " "
@@ -1421,7 +1419,7 @@ def Bagchoose():
         if ThuleciteCheck is False and GearCheck is True and MagnetCheck is False and WireCheck is True or ThuleciteCheck is True and GearCheck is True and MagnetCheck is False and WireCheck is True or ThuleciteCheck is False and GearCheck is True and MagnetCheck is True and WireCheck is True:
             print " "
             KeyboardChoose = raw_input("Do you want to create a keyboard with gear and wire? Type y or n: ")
-            if KeyboardChoose.lower == "cancel":
+            if KeyboardChoose.lower() == "cancel":
                 LivingRoom()
             if KeyboardChoose == "y":
                 print " "
@@ -1441,7 +1439,7 @@ def Bagchoose():
         if ThuleciteCheck is True and GearCheck is True and MagnetCheck is True and WireCheck is True:
             print " "
             RobotChoose = raw_input("You have thulecite, wire and magnet in your bag, do you want to combine them? Type y or n: ")
-            if RobotChoose.lower == "cancel":
+            if RobotChoose.lower() == "cancel":
                 LivingRoom()
             if RobotChoose == "y":
                 print " "
@@ -1465,7 +1463,7 @@ def Bagchoose():
         if CandleCheck is True and MatchBoxCheck is True:
             print " "
             LitCandleChoose = raw_input("You have match box in your bag, do you want to light the candle? Type y or n: ")
-            if LitCandleChoose.lower == "cancel":
+            if LitCandleChoose.lower() == "cancel":
                 LivingRoom()
             if LitCandleChoose == "y":
                 print " "
@@ -1499,9 +1497,79 @@ def Bagchoose():
         print "Please examine something that is in your bag by typing in the correct name."
         Bagchoose()
 
+
 #Advice from Heny
 def Heny():
-    print "Hahaha"
+    
+    global FishingRodCheck
+    global BookShelfCheck
+    global PillCheck
+    global DoorKeyCheck
+    global MagnetCheck
+    global ThuleciteCheck
+    global LakeCheck
+    global BathTubCheck
+
+    print " "
+    HenyAsk = raw_input("What do you want to ask him about?")
+    print " "
+    print "About Heny"
+    print "About House"
+    if BookShelfCheck is True:
+        print "About the spaces"
+    if FishingRodCheck is True:
+        print "About fishing"
+    if PillCheck is True:
+        print "About pills"
+    if DoorKeyCheck is True:
+        print "About key"
+    if MagnetCheck is True:
+        print "About magnet"
+    if ThuleciteCheck is True:
+        print "About thelecite"
+    if LakeCheck is True:
+        print "About lake"
+    if BathTubCheck is True:
+        print "About Bath Tub"
+
+
+
+
+    print " "
+    if HenyAsk.lower() == "cancel":
+        LivingRoom()
+    if HenyAsk.lower() == "about heny":
+        print "Do you not remember?"
+        print "I am your best friend."
+        print "We are always together."
+        print "I'm glad that you have come to save me."
+        print "If you didn't, you will get yourself into trouble."
+    if HenyAsk.lower() == "about house":
+        print "The house has so many abnormalities that differ from the real world."
+        print "There is a third person in this house besides us."
+        print "Mind that everything that happens has its meaning."
+    if HenyAsk.lower() == "about the spaces":
+        print "Do not let your past experiences trap you. Things may be hidden in places that you won't even imagine."
+    if HenyAsk.lower() == "about fishing":
+        print "I would say that fishing needs more than just a fishing rod."
+    if HenyAsk.lower() == "about pills":
+        print "Regret pills do not only help you regret."
+    if HenyAsk.lower() == "about key":
+        print "You should keep your key."
+    if HenyAsk.lower() == "about magnet":
+        print "Seems like the magnet has never disappeared."
+    if HenyAsk.lower() == "about thelecite":
+        print "Thulecite is actually a kind of metal."
+    if HenyAsk.lower() == "about lake":
+        print "Wait. Someone told you that you can leave the house by jumping into the lake?"
+        print "I think that should be too easy."
+    if HenyAsk.lower() == "about bath tub":
+        print "I bet I can receive 100 match boxes from the same bath tub."
+    else:
+        print "Sorry, I cannot answer this question."
+
+    Heny()
+
 
 
 #RoomChoice
@@ -1510,7 +1578,7 @@ def RoomChoice():
     
     print " "
     RoomChoose = raw_input()
-    if RoomChoose.lower == "cancel":
+    if RoomChoose.lower() == "cancel":
         LivingRoom()
     if RoomChoose.lower() == "dining room":
         DiningRoom()
@@ -1532,7 +1600,7 @@ def RoomChoice():
         print " "
         print "Are you sure that you want to leave the house by jumping into the lake?"
         LakeChoose = raw_input("Type y or n")
-        if LakeChoose.lower == "cancel":
+        if LakeChoose.lower() == "cancel":
             LivingRoom()
         if LakeChoose == "y":
             print " "
@@ -1613,7 +1681,7 @@ def Ending1():
         print "The book shelf moves to the right and a door appears."
         print " "
         endingchoice1 = raw_input("Do you wish to leave the house from here? Type y or n: ")
-        if endingchoice1.lower == "cancel":
+        if endingchoice1.lower() == "cancel":
             LivingRoom()
         if endingchoice1 == "y":
             BadEnd()
