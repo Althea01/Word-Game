@@ -1,5 +1,5 @@
 __author__ = 'LilyDu'
-
+import time
 
 """globals"""
 global name
@@ -145,6 +145,9 @@ TelephoneCheck = False
 global RefrigeratorCheck
 RefrigeratorCheck = True
 
+global WireCut
+WireCut = False
+
 """globals"""
 
 
@@ -155,6 +158,7 @@ def LivingRoom():
     
     print " "
     print "You are now in the Living Room."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -168,6 +172,7 @@ def LivingRoom():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Dining room"
             print "Bathroom"
             print "Bedroom"
@@ -202,6 +207,7 @@ def DiningRoom():
     
     print " "
     print "You are now in the dining room."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -215,6 +221,7 @@ def DiningRoom():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Living room"
             print "Study room"
             print "Kitchen"
@@ -248,6 +255,7 @@ def Bathroom():
     
     print " "
     print "You are now in the bathroom."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -261,6 +269,7 @@ def Bathroom():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Living room"
             RoomChoice()
         
@@ -292,6 +301,7 @@ def Kitchen():
     
     print " "
     print "You are now in the kitchen."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -305,6 +315,7 @@ def Kitchen():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Dining room"
             RoomChoice()
         
@@ -337,6 +348,7 @@ def Balcony():
     
     print " "
     print "You are now on the balcony."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -350,6 +362,7 @@ def Balcony():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Living room"
             if LakeCheck is True:
                 print "Lake"
@@ -384,6 +397,7 @@ def Bedroom():
     
     print " "
     print "You are now in the bedroom."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -397,6 +411,8 @@ def Bedroom():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+
+            print " "
             print "Living room"
             print "Dining room"
             if AtticCheck is True:
@@ -431,6 +447,7 @@ def StudyRoom():
     
     print " "
     print "You are now in the study room."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -444,6 +461,7 @@ def StudyRoom():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Dining room"
             RoomChoice()
         
@@ -487,6 +505,7 @@ def Attic():
     TeammateCheck = True
     print " "
     print "You are now in the attic."
+    print " "
     if TeammateCheck is True:
         print "Type 'talk' or 't' to talk to Heny."
     print "Type 'move' or 'm' to check other parts of the room."
@@ -500,6 +519,7 @@ def Attic():
         if ActionChoice == "m" or ActionChoice == "move":
             print " "
             print "Which room do you want to go to?"
+            print " "
             print "Bedroom"
             RoomChoice()
         
@@ -552,6 +572,7 @@ def ObjectChoiceS():
     
     print " "
     ObjectChoose = raw_input("Type in the name of the target: ")
+    
     if ObjectChoose.lower() == "cancel":
         LivingRoom()
     if ObjectChoose.lower() == "drawer1":
@@ -560,10 +581,12 @@ def ObjectChoiceS():
             print "Hmmm...Seems like you've just found a shovel."
             ShovelCheck = True
             Drawer1Check = False
+            time.sleep(1)
             StudyRoom()
         if Drawer1Check is False:
             print " "
             print "You have already checked this drawer."
+            time.sleep(1)
             StudyRoom()
 
     if ObjectChoose.lower() == "drawer2":
@@ -581,10 +604,12 @@ def ObjectChoiceS():
             else:
                 print " "
                 print "Try again next time."
+            time.sleep(1)
             StudyRoom()
         if Drawer2Check is False:
             print " "
             print "You have already checked this drawer."
+            time.sleep(1)
             StudyRoom()
 
     if ObjectChoose.lower() == "drawer3":
@@ -735,6 +760,7 @@ def ObjectChoiceL():
     global SofaCheck
     global KnifeCheck
     global WireCheck
+    global WireCut
     
     print " "
     ObjectChoose = raw_input("Type in the name of the target: ")
@@ -782,6 +808,11 @@ def ObjectChoiceL():
                     print "The house goes into complete darkness."
                     WireCheck = True
                     SofaCheck = False
+                    WireCut = True
+                if LitCandleCheck is False:
+                    BadEnd()
+                else:
+                    LivingRoom()
                 if KnifeCut == "n":
                     print " "
                     print "Maybe come back later"
@@ -833,6 +864,8 @@ def ObjectChoiceK():
                 print "Sorry, the fire on your candle has died out."
                 LitCandleCheck = False
                 CandleCheck = True
+                if WireCut == True:
+                    BadEnd()
             Kitchen()
         if RefrigeratorCheck is False:
             print " "
@@ -842,6 +875,8 @@ def ObjectChoiceK():
                 print "Sorry, the fire on your candle has died out."
                 LitCandleCheck = False
                 CandleCheck = True
+                if WireCut == True:
+                    BadEnd()
             Kitchen()
 
 #Object Choice in the Dining Room
@@ -1096,7 +1131,6 @@ def Bag():
     global KeyboardCheck
     global Regret_pills
     
-    
     print" "
     print "tape1"
     if ShovelCheck is True:
@@ -1233,6 +1267,8 @@ def Bagchoose():
                 LitCandleCheck = False
                 CandleCheck = True
                 BookCheck = False
+                if WireCut == True:
+                    BadEnd()
         LivingRoom()
     if Bagchoice.lower() == "$100 bill":
         print " "
@@ -1291,6 +1327,8 @@ def Bagchoose():
             LitCandleCheck = False
             CandleCheck = True
             Regret_pills -= 1
+            if WireCut == True:
+                BadEnd()
             LivingRoom()
         if Break.lower() == "regret juice":
             print " "
@@ -1373,6 +1411,8 @@ def Bagchoose():
                 print "You have gotten a piece of metal."
                 MetalCheck = True
                 LitCandleCheck = False
+                if WireCut == True:
+                    BadEnd()
                 CandleCheck = True
                 DoorKeyCheck = False
         LivingRoom()
@@ -1671,13 +1711,18 @@ def Introduction():
     print " "
     print "Hi,"+name+"."+"Unfortunately, you are trapped here in a haunted crooked house."
     print " "
+    time.sleep(2)
     print "You and your friend Heny were trying to find out a dark secret in the house when someone attacked you from behind and you fainted."
     print " "
+    time.sleep(2)
     print "You need to leave the house ASAP before something happen to you."
     print " "
+    time.sleep(2)
     print "Now, try to escape the house safely."
     print " "
+    time.sleep(2)
     print "Remember, you can type 'cancel' to return to the Living Room at any time."
+    time.sleep(2)
     LivingRoom()
 
 #A bad ending of the game
