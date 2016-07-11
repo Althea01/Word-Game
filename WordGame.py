@@ -624,10 +624,12 @@ def ObjectChoiceS():
             print "How many planets were there in the galaxy?"
             print "What color is chlorophyll unable to absorb?"
             Drawer3Check = False
+            time.sleep(8)
             StudyRoom()
         if Drawer3Check is False:
             print " "
             print "Sorry, somebody else has just taken all the questions."
+            time.sleep(1)
             StudyRoom()
 
     if ObjectChoose.lower() == "teddy bear":
@@ -640,10 +642,12 @@ def ObjectChoiceS():
                 print "You have gotten thulecite"
                 ThuleciteCheck = True
                 TeddyBearCheck = False
+            time.sleep(1)
             StudyRoom()
         if TeddyBearCheck is False:
             print " "
             print "The teddy bear is broken"
+            time.sleep(1)
             StudyRoom()
 
     if ObjectChoose.lower() == "computer":
@@ -657,10 +661,12 @@ def ObjectChoiceS():
                 GearCheck = True
                 HammarCheck = False
                 ComputerCheck = False
+            time.sleep(1)
             StudyRoom()
         if ComputerCheck is False:
             print " "
             print "This is a broken computer with a hammar stucked in it."
+            time.sleep(1)
             StudyRoom()
 
     if ObjectChoose.lower() == "book shelf":
@@ -694,7 +700,7 @@ def ObjectChoiceS():
                     print " "
                     print "I wish you could make a better choice."
                     BookChoice = raw_input()
-
+        time.sleep(1)
         StudyRoom()
 
     if ObjectChoose.lower() == "safe":
@@ -726,11 +732,13 @@ def ObjectChoiceS():
             print " "
             print "Congratulations. You have found a book in the safe. The book is called Catholic Belief and is put into your bag."
             BookCheck = True
+        time.sleep(1)
         StudyRoom()
     if ObjectChoose.lower() == "space five":
         if ShovelCheck is False:
             print " "
             print "This is just a vase. Go and fetch other essential elements to open the safe."
+            time.sleep(1)
             StudyRoom()
         if ShovelCheck is True:
             print " "
@@ -744,12 +752,15 @@ def ObjectChoiceS():
                 print "You have found a $100 bill."
                 MoneyCheck = True
                 ShovelCheck = False
+                time.sleep(1)
                 StudyRoom()
             if vasedig == "n":
+                time.sleep(1)
                 StudyRoom()
     else:
         print " "
         print "Go and fetch what you need. Don't just stay here."
+        time.sleep(1)
         StudyRoom()
 
 #Object Choice in the Living Room
@@ -776,10 +787,12 @@ def ObjectChoiceL():
             print "Hold the $100 dollar bill in your hand and call 19971115."
             print "Have a nice day."
             TelevisionCheck = True
+            time.sleep(1)
             LivingRoom()
         elif TelevisionCheck is True:
             print " "
             print "There's really nothing interesting."
+            time.sleep(1)
             LivingRoom()
 
     elif ObjectChoose.lower() == "table":
@@ -788,10 +801,12 @@ def ObjectChoiceL():
             print "You have collected a water glass"
             GlassCheck = True
             TableCheck = False
+            time.sleep(1)
             LivingRoom()
         if TableCheck is False:
             print " "
             print "There's nothing on the table"
+            time.sleep(1)
             LivingRoom()
     elif ObjectChoose.lower() == "sofa":
         if SofaCheck is True:
@@ -810,8 +825,10 @@ def ObjectChoiceL():
                     SofaCheck = False
                     WireCut = True
                 if LitCandleCheck is False:
+                    time.sleep(1)
                     BadEnd()
                 else:
+                    time.sleep(1)
                     LivingRoom()
                 if KnifeCut == "n":
                     print " "
@@ -820,6 +837,7 @@ def ObjectChoiceL():
         if SofaCheck is False:
             print " "
             print "There is nothing here."
+            time.sleep(1)
             LivingRoom()
 
 
@@ -848,10 +866,12 @@ def ObjectChoiceK():
             KnifeCheck = True
             HammarCheck = True
             KnifeCaseCheck = False
+            time.sleep(1)
             Kitchen()
         if KnifeCaseCheck is False:
             print " "
             print "You have already taken away everything from this knife case."
+            time.sleep(1)
             Kitchen()
     if ObjectChoose.lower() == "fridge":
         if RefrigeratorCheck is True:
@@ -865,7 +885,9 @@ def ObjectChoiceK():
                 LitCandleCheck = False
                 CandleCheck = True
                 if WireCut == True:
+                    time.sleep(1)
                     BadEnd()
+            time.sleep(1)
             Kitchen()
         if RefrigeratorCheck is False:
             print " "
@@ -876,7 +898,9 @@ def ObjectChoiceK():
                 LitCandleCheck = False
                 CandleCheck = True
                 if WireCut == True:
+                    time.sleep(1)
                     BadEnd()
+            time.sleep(1)
             Kitchen()
 
 #Object Choice in the Dining Room
@@ -896,10 +920,12 @@ def ObjectChoiceD():
             print "Wow, there is a radio in the droplight."
             RadioCheck = True
             DroplightCheck = False
+            time.sleep(1)
             DiningRoom()
         if DroplightCheck is False:
             print " "
             print "This is a droplight."
+            time.sleep(1)
             DiningRoom()
     if ObjectChoose.lower() == "dining table":
         if DiningTableCheck is True:
@@ -907,10 +933,12 @@ def ObjectChoiceD():
             print "There is a candle on the table."
             CandleCheck = True
             DiningTableCheck = False
+            time.sleep(1)
             DiningRoom()
         if DiningTableCheck is False:
             print " "
             print "There's nothing on the table."
+            time.sleep(1)
             DiningRoom()
 
 
@@ -937,14 +965,17 @@ def ObjectChoiceBath():
                 print "Your glass is filled."
                 GlassFillCheck = True
                 GlassCheck = False
+                time.sleep(1)
                 Bathroom()
             else:
                 print " "
                 print "Maybe you can come later."
+                time.sleep(1)
                 Bathroom()
         if GlassCheck is False:
             print " "
             print "You should come back later."
+            time.sleep(1)
             Bathroom()
     if ObjectChoose.lower() == "mirror":
         print " "
@@ -955,21 +986,25 @@ def ObjectChoiceBath():
             print " "
             print "Congratulations!"
             AtticCheck = True
+            time.sleep(1)
             Attic()
         else:
             print " "
             print "Sorry, wrong password."
+            time.sleep(1)
             Bathroom()
     if ObjectChoose.lower() == "bath tub":
         if BathTubCheck is True:
             print " "
             print "You have found a match box in the bath tub."
             MatchBoxCheck = True
+            time.sleep(1)
             Bathroom()
         if BathTubCheck is False:
             print " "
             print "You have found another match box in the bath tub."
             MatchBoxCheck = True
+            time.sleep(1)
             Bathroom()
 
 #Object Choice in the Bedroom
@@ -1000,12 +1035,15 @@ def ObjectChoiceBed():
                         print "You have received a cactus seed"
                         MoneyCheck = False
                         SeedCheck = True
+                        time.sleep(1)
                         Bedroom()
                     if MoneyCheck is False:
                         print " "
                         print "You do not have enough money to buy a cactus seed"
+                        time.sleep(1)
                         Bedroom()
                 if BuyChoice == "n":
+                    time.sleep(1)
                     Bedroom()
                 else:
                     print " "
@@ -1014,18 +1052,22 @@ def ObjectChoiceBed():
             else:
                 print " "
                 print "Sorry, the number seems to be wrong."
+                time.sleep(1)
                 Bedroom()
         elif TelephoneCheck is True:
             print " "
             print "..."
+            time.sleep(1)
             Bedroom()
     if ObjectChoose.lower() == "bed":
         print " "
         print "You have taken a nap."
+        time.sleep(1)
         Bedroom()
     if ObjectChoose.lower() == "wardrobe":
         print " "
         print "Sorry, your teammate is not in here and this wardrobe is not movable."
+        time.sleep(1)
         Bedroom()
 
 
@@ -1049,11 +1091,13 @@ def ObjectChoiceBal():
             print "He puts on a weird smile and jumps into the lake with his fishing rod."
             TelescopeCheck = True
             LakeCheck = True
+            time.sleep(1)
             Balcony()
         if TelescopeCheck is True:
             FishingRodCheck = True
             print " "
             print "A dead body floats on the surface of the lake."
+            time.sleep(1)
             Balcony()
     if ObjectChoose.lower() == "fishing rod":
         print " "
@@ -1068,8 +1112,10 @@ def ObjectChoiceBal():
             else:
                 print " "
                 print "You have gotten absolutely nothing."
+        time.sleep(1)
         Balcony()
         if FishingRodUse == "n":
+            time.sleep(1)
             Balcony()
 
 #Object Choice in the Attic
@@ -1089,14 +1135,17 @@ def ObjectChoiceA():
             if RadioUse == "y":
                 print " "
                 print "Congratulations, you have successfully saved your teammate Heny. From now on, you can talk to him and get a whole lot of information."
+                time.sleep(1)
                 Attic()
             if RadioUse == "n":
                 print " "
                 print "I think you should listen to the tape."
+                time.sleep(1)
                 Attic()
         if RadioCheck is False:
             print " "
             print "You can't listen to tape2 just with this single tape, right?"
+            time.sleep(1)
             Attic()
 
 
@@ -1243,14 +1292,17 @@ def Bagchoose():
             print "You have always been a selfish guy who pretends to be generous."
             print "However, you have a best friend whose name is Heny and you have claimed that you would do anything for him."
             print "He is now trapped in this house. You may choose to save him or not."
+            time.sleep(1)
             LivingRoom()
         if RadioCheck is False:
             print " "
             print "You can't listen just with a tape, right?"
+            time.sleep(1)
             LivingRoom()
     if Bagchoice.lower() == "shovel":
         print " "
         print "Seems like it could be used to dig something...as a shovel."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "catholic belief":
         print " "
@@ -1269,14 +1321,17 @@ def Bagchoose():
                 BookCheck = False
                 if WireCut == True:
                     BadEnd()
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "$100 bill":
         print " "
         print "Of course, money should be used to buy things."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "a glass":
         print " "
         print "This is collected from the table."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "a glass of water":
         print " "
@@ -1292,10 +1347,12 @@ def Bagchoose():
                 RegretJuiceCheck = True
                 Regret_pills -= 1
                 GlassFillCheck = False
+                time.sleep(1)
                 LivingRoom()
             if RegretJuiceChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
     if Bagchoice.lower() == "regret pill":
         print " "
@@ -1310,6 +1367,7 @@ def Bagchoose():
             CactusCheck = False
             SeedCheck = True
             Regret_pills -= 1
+            time.sleep(1)
             LivingRoom()
         if Break.lower() == "robot":
             print " "
@@ -1320,6 +1378,7 @@ def Bagchoose():
             GearCheck = True
             MagnetCheck = True
             Regret_pills -= 1
+            time.sleep(1)
             LivingRoom()
         if Break.lower() == "a lit candle":
             print " "
@@ -1329,12 +1388,14 @@ def Bagchoose():
             Regret_pills -= 1
             if WireCut == True:
                 BadEnd()
+            time.sleep(1)
             LivingRoom()
         if Break.lower() == "regret juice":
             print " "
             print "regret juice is changed"
             RegretJuiceCheck = False
             GlassFillCheck = True
+            time.sleep(1)
             LivingRoom()
         if Break.lower() == "paper":
             print " "
@@ -1342,6 +1403,7 @@ def Bagchoose():
             PaperCheck = False
             BookCheck = True
             Regret_pills -= 1
+            time.sleep(1)
             LivingRoom()
         if Break.lower() == "metal":
             print " "
@@ -1349,6 +1411,7 @@ def Bagchoose():
             MetalCheck = False
             DoorKeyCheck = True
             Regret_pills -= 1
+            time.sleep(1)
             LivingRoom()
         if Break.lower() == "keyboard":
             print " "
@@ -1357,10 +1420,12 @@ def Bagchoose():
             WireCheck = True
             GearCheck = True
             Regret_pills -= 1
+            time.sleep(1)
             LivingRoom()
         else:
             print " "
             print "This cannot be changed. Sorry."
+            time.sleep(1)
             LivingRoom()
     if Bagchoice.lower() == "cactus seed":
         print " "
@@ -1377,26 +1442,32 @@ def Bagchoose():
                 SeedCheck = False
                 GlassFillCheck = False
                 GlassCheck = True
+                time.sleep(1)
                 LivingRoom()
             if SeedChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
     if Bagchoice.lower() == "cactus":
         print " "
         print "I would say this is just a cactus."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "robot":
         print " "
         print "A robot can be used to do what...? I don't know."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "regret juice":
         print " "
         print "At least it does not have as much effect as when it is still pills."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "a lit candle":
         print " "
         print "I guess this is just a candle on fire."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "key":
         print " "
@@ -1415,6 +1486,7 @@ def Bagchoose():
                     BadEnd()
                 CandleCheck = True
                 DoorKeyCheck = False
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "magnet":
         print " "
@@ -1431,19 +1503,25 @@ def Bagchoose():
                 ThuleciteCheck = False
                 GearCheck = False
                 WireCheck = False
+                time.sleep(1)
                 LivingRoom()
             if RobotChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
-        LivingRoom()
+        else:
+            time.sleep(1)
+            LivingRoom()
     if Bagchoice.lower() == "knife":
         print " "
         print "I think its usage is more like that of a pair of scissors."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "hammar":
         print " "
         print "A hammar is usually used to smash things"
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "thulecite":
         print " "
@@ -1460,10 +1538,12 @@ def Bagchoose():
                 ThuleciteCheck = False
                 GearCheck = False
                 WireCheck = False
+                time.sleep(1)
                 LivingRoom()
             if RobotChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
     if Bagchoice.lower() == "wire":
         print " "
@@ -1480,10 +1560,12 @@ def Bagchoose():
                 ThuleciteCheck = False
                 GearCheck = False
                 WireCheck = False
+                time.sleep(1)
                 LivingRoom()
             if RobotChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
         if ThuleciteCheck is False and GearCheck is True and MagnetCheck is False and WireCheck is True or ThuleciteCheck is True and GearCheck is True and MagnetCheck is False and WireCheck is True or ThuleciteCheck is False and GearCheck is True and MagnetCheck is True and WireCheck is True:
             print " "
@@ -1496,10 +1578,12 @@ def Bagchoose():
                 KeyboardCheck = True
                 GearCheck = False
                 WireCheck = False
+                time.sleep(1)
                 LivingRoom()
             if KeyboardChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
 
     if Bagchoice.lower() == "gear":
@@ -1517,14 +1601,17 @@ def Bagchoose():
                 ThuleciteCheck = False
                 GearCheck = False
                 WireCheck = False
+                time.sleep(1)
                 LivingRoom()
             if RobotChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
     if Bagchoice.lower() == "radio":
         print " "
         print "Radios are used to play tapes."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "candle":
         print " "
@@ -1540,30 +1627,37 @@ def Bagchoose():
                 LitCandleCheck = True
                 MatchBoxCheck = False
                 CandleCheck = False
+                time.sleep(1)
                 LivingRoom()
             if LitCandleChoose == "n":
                 print " "
                 print "Okay, maybe later."
+                time.sleep(1)
                 LivingRoom()
     if Bagchoice.lower() == "a box of match":
         print " "
         print "Matches are to light things."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "paper":
         print " "
         print "A part of the book."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "metal":
         print " "
         print "The door key is melt down."
+        time.sleep(1)
         LivingRoom()
     if Bagchoice.lower() == "keyboard":
         print " "
         print "If connected to computer, can be used to type things out."
+        time.sleep(1)
         LivingRoom()
     else:
         print " "
         print "Please examine something that is in your bag by typing in the correct name."
+        time.sleep(1)
         LivingRoom()
 
 
@@ -1637,7 +1731,7 @@ def Heny():
         print "I bet I can receive 100 match boxes from the same bath tub."
     else:
         print "Sorry, I cannot answer this question."
-
+    time.sleep(1)
     Heny()
 
 
@@ -1678,6 +1772,7 @@ def RoomChoice():
             print "Without knowing what has happened, you drowned into the lake."
         if LakeChoose == "n":
             LakeCheck = False
+            time.sleep(1)
             Balcony()
     else:
         print " "
